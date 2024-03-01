@@ -49,6 +49,8 @@
 #![cfg_attr(all(not(test), not(doc)), no_std)]
 #![feature(doc_cfg)]
 #![feature(doc_auto_cfg)]
+#![feature(hashmap_internals)]
+#![feature(hasher_prefixfree_extras)]
 
 #[cfg(feature = "alloc")]
 extern crate alloc;
@@ -56,6 +58,8 @@ extern crate alloc;
 #[cfg(feature = "alloc")]
 #[doc(no_inline)]
 pub use alloc::{boxed, collections, format, string, vec};
+#[cfg(feature = "alloc")]
+pub use hashmap::HashMap;
 
 #[doc(no_inline)]
 pub use core::{arch, cell, cmp, hint, marker, mem, ops, ptr, slice, str};
@@ -75,3 +79,4 @@ pub mod time;
 pub mod fs;
 #[cfg(feature = "net")]
 pub mod net;
+pub mod hashmap;

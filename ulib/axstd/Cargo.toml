@@ -29,10 +29,11 @@ fp_simd = ["axfeat/fp_simd"]
 irq = ["arceos_api/irq", "axfeat/irq"]
 
 # Memory
-alloc = ["arceos_api/alloc", "axfeat/alloc", "axio/alloc"]
+alloc = ["arceos_api/alloc", "axfeat/alloc", "axio/alloc", "dep:hashbrown"]
 alloc-tlsf = ["axfeat/alloc-tlsf"]
 alloc-slab = ["axfeat/alloc-slab"]
 alloc-buddy = ["axfeat/alloc-buddy"]
+alloc-new = ["axfeat/alloc-new"]
 paging = ["axfeat/paging"]
 tls = ["axfeat/tls"]
 
@@ -69,6 +70,7 @@ log-level-debug = ["axfeat/log-level-debug"]
 log-level-trace = ["axfeat/log-level-trace"]
 
 [dependencies]
+hashbrown = { version = "0.14.3", optional = true }
 axfeat = { path = "../../api/axfeat" }
 arceos_api = { path = "../../api/arceos_api" }
 axio = { path = "../../crates/axio" }

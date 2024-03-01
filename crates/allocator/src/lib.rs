@@ -26,6 +26,11 @@ mod slab;
 #[cfg(feature = "slab")]
 pub use slab::SlabByteAllocator;
 
+#[cfg(feature = "new")]
+mod new_alloc;
+#[cfg(feature = "new")]
+pub use new_alloc::NewByteAllocator;
+
 #[cfg(feature = "tlsf")]
 mod tlsf;
 #[cfg(feature = "tlsf")]
